@@ -1,0 +1,8 @@
+{
+	host: 'localhost',
+	port: 1337,
+	local_address: '127.0.0.1',
+	public_key: 'publickey',
+	private_key: 'privateKey',
+	auth_key: 'authKey'
+}

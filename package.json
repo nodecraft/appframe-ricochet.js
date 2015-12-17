@@ -1,0 +1,23 @@
+{
+  "name": "appframe-ricochet",
+  "version": "0.1.0",
+  "description": "Ricochet plugin for appframe",
+  "main": "appframe.ricochet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodecraft/appframe-ricochet.js"
+  },
+  "keywords": [
+    "ricochet",
+    "appframe"
+  ],
+  "author": "NodeCraft Hosting LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodecraft/appframe-ricochet.js/issues"
+  },
+  "homepage": "https://github.com/nodecraft/appframe-ricochet.js"
+}
