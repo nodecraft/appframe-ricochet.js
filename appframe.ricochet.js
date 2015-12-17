@@ -27,12 +27,6 @@ module.exports = require('../appframe.js/appframe.js')().registerPlugin({
 			return app.info('Reconnected to ricochet server');
 		});
 
-		app.ricochet.connect({
-			host: app.config.ricochet.host,
-			port: app.config.ricochet.port,
-			localAddress: app.config.ricochet.local_address,
-			privateKey: app.config.ricochet.private_key,
-			authKey: app.config.ricochet.auth_key
-		});
+		app.ricochet.connect(app.config.ricochet);
 	}
 });

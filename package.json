@@ -1,6 +1,6 @@
 {
   "name": "appframe-ricochet",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Ricochet plugin for appframe",
   "main": "appframe.ricochet.js",
   "scripts": {
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/nodecraft/appframe-ricochet.js/issues"
   },
-  "homepage": "https://github.com/nodecraft/appframe-ricochet.js"
+  "homepage": "https://github.com/nodecraft/appframe-ricochet.js",
+  "dependencies": {
+    "ricochet": "0.3.1"
+  }
 }
