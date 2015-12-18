@@ -1,7 +1,7 @@
 'use strict';
 var ricochet = require('ricochet');
 
-module.exports = require('../appframe.js/appframe.js')().registerPlugin({
+module.exports = require('appframe')().registerPlugin({
 	dir: __dirname,
 	name: "Ricochet",
 	namespace: "ricochet",
@@ -18,7 +18,7 @@ module.exports = require('../appframe.js/appframe.js')().registerPlugin({
 		});
 
 		app.ricochet.on('error', function(err){
-			app.error('Ricochet error').debug(err);
+			return app.error('Ricochet error').debug(err);
 		});
 		app.ricochet.on('disconnected', function(err){
 			return app.warn('Disconnected from ricochet server, attempting reconnect...');
@@ -27,6 +27,6 @@ module.exports = require('../appframe.js/appframe.js')().registerPlugin({
 			return app.info('Reconnected to ricochet server');
 		});
 
-		app.ricochet.connect(app.config.ricochet);
+		return app.ricochet.connect(app.config.ricochet);
 	}
 });
