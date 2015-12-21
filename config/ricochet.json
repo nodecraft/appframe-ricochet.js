@@ -4,5 +4,6 @@
 	"localAddress": "127.0.0.1",
 	"publicKey": "publickey",
 	"privateKey": "privateKey",
-	"authKey": "authKey"
+	"authKey": "authKey",
+	"client": {}
 }

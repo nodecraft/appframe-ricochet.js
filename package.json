@@ -1,6 +1,6 @@
 {
   "name": "appframe-ricochet",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Ricochet plugin for appframe",
   "main": "appframe.ricochet.js",
   "scripts": {

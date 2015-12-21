@@ -7,6 +7,7 @@ module.exports = require('appframe')().registerPlugin({
 	namespace: "ricochet",
 	callback: true,
 	exports: function(app, callback){
+		app.ricochet = new ricochet.Client(app.config.ricochet.client);
 		app.ricochet.on('ready', function(){
 			return callback();
 		});
