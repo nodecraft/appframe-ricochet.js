@@ -8,7 +8,7 @@ module.exports = require('appframe')().registerPlugin({
 	callback: true,
 	exports: function(app, callback){
 		app.ricochet = new ricochet.Client(app.config.ricochet.client);
-		app.ricochet.on('ready', function(){
+		app.ricochet.on('connected', function(){
 			return callback();
 		});
 		app.ricochet.on('authFail', function(err){
