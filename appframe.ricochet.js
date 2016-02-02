@@ -5,19 +5,14 @@ module.exports = require('appframe')().registerPlugin({
 	dir: __dirname,
 	name: "Ricochet",
 	namespace: "ricochet",
-	callback: true,
-	exports: function(app, callback){
+	exports: function(app){
 		app.ricochet = new ricochet.Client(app.config.ricochet.client);
-		app.ricochet.on('connected', function(){
-			return callback();
+		app.ricochet.on('ready', function(){
+			return app.info('Connected to ricochet server');
 		});
 		app.ricochet.on('authFail', function(err){
-			return callback(err);
+			return app.error('Authentication failed when connecting to ricochet server');
 		});
-		app.ricochet.on('connectionFail', function(err){
-			return callback(err);
-		});
-
 		app.ricochet.on('error', function(err){
 			return app.error('Ricochet error').debug(err);
 		});
