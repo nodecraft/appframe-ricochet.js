@@ -6,6 +6,8 @@ module.exports = require('appframe')().registerPlugin({
 	name: "Ricochet",
 	namespace: "ricochet",
 	exports: function(app){
+		app.registerCodes(require('ricochet/ricochet.errors.json'))
+
 		app.ricochet = new ricochet.Client(app.config.ricochet.client);
 		app.ricochet.on('ready', function(){
 			return app.info('Connected to ricochet server');
