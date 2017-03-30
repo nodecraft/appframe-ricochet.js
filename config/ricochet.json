@@ -1,7 +1,7 @@
 {
 	"host": "localhost",
 	"port": 1337,
-	"localAddress": "127.0.0.1",
+	//"localAddress": "127.0.0.1", set a local address to bind to when connecting
 	"publicKey": "publickey",
 	"privateKey": "privateKey",
 	"authKey": "authKey",
