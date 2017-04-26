@@ -10,19 +10,24 @@ module.exports = require('appframe')().registerPlugin({
 
 		app.ricochet = new ricochet.Client(app.config.ricochet.client);
 		app.ricochet.on('ready', function(){
-			return app.info('Connected to ricochet server');
+			app.info('Connected to ricochet server');
+			return app.emit('ricochet.ready');
 		});
 		app.ricochet.on('authFail', function(err){
-			return app.error('Authentication failed when connecting to ricochet server');
+			app.error('Authentication failed when connecting to ricochet server');
+			return app.emit('ricochet.authFail', err);
 		});
 		app.ricochet.on('error', function(err){
-			return app.error('Ricochet error').debug(err);
+			app.error('Ricochet error').debug(err);
+			return app.emit('ricochet.error', err);
 		});
 		app.ricochet.on('disconnected', function(err){
-			return app.warn('Disconnected from ricochet server, attempting reconnect...');
+			app.warn('Disconnected from ricochet server, attempting reconnect...');
+			return app.emit('ricochet.disconnected', err);
 		});
 		app.ricochet.on('reconnected', function(err){
-			return app.info('Reconnected to ricochet server');
+			app.info('Reconnected to ricochet server');
+			return app.emit('ricochet.reconnected', err);
 		});
 
 		return app.ricochet.connect(app.config.ricochet);
